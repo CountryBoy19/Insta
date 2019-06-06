@@ -1,0 +1,13 @@
+Options All -Indexes
+
+RewriteEngine On
+
+
+RewriteRule ^sitemap.xml sitemap.php [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.+)$ index.php?page=$1 [QSA,L]
+
